@@ -1,54 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f6f5f0">
-    <title>Little List — To-do list</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technology Leaders of the Future Project</title>
   </head>
   <body>
-    <main class="app">
-      <header class="intro">
-        <p class="eyebrow">A little space to focus</p>
-        <h1>Little List</h1>
-        <p class="subtitle">One thing at a time. You’ve got this.</p>
-      </header>
-
-      <section class="list-card" aria-label="To-do list">
-        <form class="add-form" id="add-form">
-          <label for="task-input" class="visually-hidden">New task</label>
-          <input
-            id="task-input"
-            name="task"
-            type="text"
-            placeholder="What would you like to do?"
-            maxlength="160"
-            autocomplete="off"
-            required
-          >
-          <button class="add-button" type="submit">
-            <span class="plus" aria-hidden="true">+</span>
-            <span>Add task</span>
-          </button>
-        </form>
-
-        <ul class="task-list" id="task-list" aria-live="polite"></ul>
-
-        <footer class="list-footer">
-          <span class="items-left" id="items-left" aria-live="polite"></span>
-          <nav class="filters" aria-label="Filter tasks">
-            <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
-            <button class="filter" type="button" data-filter="active" aria-pressed="false">Active</button>
-            <button class="filter" type="button" data-filter="completed" aria-pressed="false">Done</button>
-          </nav>
-          <button class="clear-button" id="clear-completed" type="button">Clear done</button>
-        </footer>
-      </section>
-
-      <p class="hint">Your list is saved automatically on this device.</p>
-    </main>
-
-    <script src="script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

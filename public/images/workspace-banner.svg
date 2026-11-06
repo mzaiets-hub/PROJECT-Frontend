@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" fill="none">
+  <defs>
+    <linearGradient id="wb-bg" x1="0" y1="0" x2="600" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4f46e5" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#7c3aed" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="accent-cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="accent-purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background base -->
+  <rect width="600" height="240" rx="16" fill="url(#wb-bg)" />
+  
+  <!-- Left Side: Dashboard Canvas -->
+  <g transform="translate(30, 25)">
+    <!-- Main Card -->
+    <rect width="320" height="190" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Top toolbar -->
+    <rect x="16" y="16" width="120" height="8" rx="4" fill="#e2e8f0" />
+    <rect x="16" y="30" width="180" height="5" rx="2.5" fill="#64748b" />
+    
+    <!-- Metric blocks -->
+    <rect x="16" y="50" width="90" height="55" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <rect x="26" y="60" width="35" height="4" rx="2" fill="#94a3b8" />
+    <rect x="26" y="70" width="45" height="12" rx="3" fill="#38bdf8" />
+    <rect x="26" y="88" width="55" height="4" rx="2" fill="#22c55e" />
+
+    <rect x="114" y="50" width="90" height="55" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <rect x="124" y="60" width="35" height="4" rx="2" fill="#94a3b8" />
+    <rect x="124" y="70" width="45" height="12" rx="3" fill="#a855f7" />
+    <rect x="124" y="88" width="55" height="4" rx="2" fill="#38bdf8" />
+
+    <rect x="212" y="50" width="90" height="55" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <rect x="222" y="60" width="35" height="4" rx="2" fill="#94a3b8" />
+    <rect x="222" y="70" width="45" height="12" rx="3" fill="#10b981" />
+    <rect x="222" y="88" width="55" height="4" rx="2" fill="#94a3b8" />
+
+    <!-- Chart graph area -->
+    <rect x="16" y="118" width="286" height="56" rx="8" fill="#1e293b" />
+    <!-- Bar chart simulation -->
+    <rect x="32" y="152" width="16" height="14" rx="3" fill="#6366f1" fill-opacity="0.6" />
+    <rect x="58" y="142" width="16" height="24" rx="3" fill="#6366f1" fill-opacity="0.8" />
+    <rect x="84" y="132" width="16" height="34" rx="3" fill="#818cf8" />
+    <rect x="110" y="126" width="16" height="40" rx="3" fill="url(#accent-purple)" />
+    <rect x="136" y="136" width="16" height="30" rx="3" fill="#818cf8" />
+    <rect x="162" y="146" width="16" height="20" rx="3" fill="#6366f1" fill-opacity="0.7" />
+    
+    <!-- Wave line -->
+    <path d="M190 155 Q 215 130 240 145 T 290 130" stroke="#38bdf8" stroke-width="2" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Right Side: Floating Widgets & Badges -->
+  <g transform="translate(370, 30)">
+    <!-- Widget 1: Component Stack -->
+    <rect width="200" height="80" rx="10" fill="#0f172a" stroke="#475569" stroke-width="1.2" />
+    <circle cx="25" cy="25" r="9" fill="url(#accent-cyan)" />
+    <rect x="42" y="18" width="80" height="7" rx="3.5" fill="#f8fafc" />
+    <rect x="42" y="30" width="120" height="5" rx="2.5" fill="#94a3b8" />
+    <rect x="18" y="48" width="50" height="18" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <rect x="74" y="48" width="50" height="18" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+    <rect x="130" y="48" width="50" height="18" rx="5" fill="#6366f1" />
+  </g>
+
+  <g transform="translate(370, 125)">
+    <!-- Widget 2: Status Panel -->
+    <rect width="200" height="85" rx="10" fill="#0f172a" stroke="#6366f1" stroke-width="1.2" />
+    <circle cx="24" cy="26" r="6" fill="#10b981" />
+    <rect x="38" y="22" width="70" height="8" rx="4" fill="#e2e8f0" />
+    <rect x="18" y="45" width="164" height="26" rx="6" fill="#1e293b" />
+    <rect x="28" y="55" width="80" height="6" rx="3" fill="#94a3b8" />
+    <rect x="140" y="53" width="32" height="10" rx="3" fill="#10b981" fill-opacity="0.2" />
+  </g>
+</svg>
