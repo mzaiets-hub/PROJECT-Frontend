@@ -1,12 +1,38 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import reactLogo from "@/assets/react.svg"
 import viteLogo from "@/assets/vite.svg"
 import heroIllustration from "@/assets/hero-illustration.svg"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Heart } from "lucide-react"
 
 export default function LandingPage() {
+  const [isSubmittingWishlist, setIsSubmittingWishlist] = useState(false)
+  const [wishlistMessage, setWishlistMessage] = useState("")
+
+  async function addToWishlist() {
+    setIsSubmittingWishlist(true)
+    setWishlistMessage("")
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/wishlist", {
+        method: "POST",
+      })
+
+      if (!response.ok) {
+        setWishlistMessage(`Wishlist request failed (HTTP ${response.status}).`)
+        return
+      }
+
+      setWishlistMessage("Wishlist request sent successfully.")
+    } catch {
+      setWishlistMessage("Could not reach the wishlist API.")
+    } finally {
+      setIsSubmittingWishlist(false)
+    }
+  }
+
   return (
     <div className="w-full max-w-xl flex flex-col gap-6">
       <div className="text-center flex flex-col items-center gap-3">
@@ -56,13 +82,27 @@ export default function LandingPage() {
       </div>
 
       {/* Primary Action */}
-      <div className="flex justify-center pt-2">
+      <div className="flex flex-col items-center gap-3 pt-2">
         <Button asChild size="lg" className="gap-2 shadow-sm">
           <Link to="/app/dashboard">
             <span>Open App</span>
             <ArrowRight className="h-4 w-4" />
           </Link>
         </Button>
+        <Button
+          type="button"
+          variant="outline"
+          size="lg"
+          className="gap-2"
+          onClick={addToWishlist}
+          disabled={isSubmittingWishlist}
+        >
+          <Heart className="h-4 w-4" />
+          {isSubmittingWishlist ? "Sending..." : "Add to wishlist"}
+        </Button>
+        <p className="min-h-5 text-sm text-muted-foreground" aria-live="polite">
+          {wishlistMessage}
+        </p>
       </div>
 
       <footer className="text-center text-xs text-muted-foreground">
