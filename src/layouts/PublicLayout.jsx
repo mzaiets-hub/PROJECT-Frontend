@@ -18,6 +18,9 @@ export default function PublicLayout() {
           </Link>
 
           <nav className="flex items-center gap-3 shrink-0">
+            <Button asChild variant="ghost" size="sm">
+              <Link to="/login">Sign in</Link>
+            </Button>
             <Button asChild variant="default" size="sm" className="gap-1.5 shadow-sm">
               <Link to="/app/dashboard">
                 <span>Open App</span>

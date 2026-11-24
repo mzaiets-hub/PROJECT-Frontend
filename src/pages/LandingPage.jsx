@@ -89,6 +89,9 @@ export default function LandingPage() {
             <ArrowRight className="h-4 w-4" />
           </Link>
         </Button>
+        <Button asChild variant="outline" size="lg">
+          <Link to="/login">Sign in</Link>
+        </Button>
         <Button
           type="button"
           variant="outline"

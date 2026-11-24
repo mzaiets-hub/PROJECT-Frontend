@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import PublicLayout from "@/layouts/PublicLayout"
 import AppLayout from "@/layouts/AppLayout"
 import LandingPage from "@/pages/LandingPage"
+import LoginPage from "@/pages/LoginPage"
 import DashboardPage from "@/pages/DashboardPage"
 import ComponentsPage from "@/pages/ComponentsPage"
 
@@ -12,6 +13,7 @@ export default function App() {
         {/* Public Marketing / Landing Layout */}
         <Route path="/" element={<PublicLayout />}>
           <Route index element={<LandingPage />} />
+          <Route path="login" element={<LoginPage />} />
         </Route>
 
         {/* Application Dashboard Layout */}
