@@ -7,6 +7,7 @@ export default function LoginPage() {
   const navigate = useNavigate()
   const [name, setName] = useState("")
   const [password, setPassword] = useState("")
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [message, setMessage] = useState("")
   const [hasError, setHasError] = useState(false)
@@ -97,17 +98,29 @@ export default function LoginPage() {
 
         <div className="space-y-2">
           <label htmlFor="password" className="text-sm font-medium">Password</label>
-          <Input
-            id="password"
-            name="password"
-            type="password"
-            autoComplete="current-password"
-            placeholder="Your password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            required
-            disabled={isSubmitting}
-          />
+          <div className="flex gap-2">
+            <Input
+              id="password"
+              name="password"
+              type={isPasswordVisible ? "text" : "password"}
+              autoComplete="current-password"
+              placeholder="Your password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              required
+              disabled={isSubmitting}
+            />
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setIsPasswordVisible((visible) => !visible)}
+              aria-label={isPasswordVisible ? "Hide password" : "Show password"}
+              aria-pressed={isPasswordVisible}
+              disabled={isSubmitting}
+            >
+              {isPasswordVisible ? "Hide" : "Show"}
+            </Button>
+          </div>
         </div>
 
         <Button type="submit" className="w-full" disabled={isSubmitting}>
